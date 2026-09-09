@@ -1,0 +1,36 @@
+{
+  "$schema": "https://forge.dev/schema/forge.json",
+  "comment": "Example project config — copy to .forge/forge.json and adapt. Keys ONLY via env vars.",
+  "providers": {
+    "openai": {
+      "apiKeyEnv": "OPENAI_API_KEY",
+      "models": ["gpt-4o", "gpt-4o-mini"]
+    },
+    "ollama": {
+      "baseUrl": "http://127.0.0.1:11434/v1",
+      "models": ["llama3.1", "qwen2.5-coder"]
+    }
+  },
+  "routing": {
+    "default": "openai:gpt-4o-mini",
+    "fallbacks": ["ollama:qwen2.5-coder"],
+    "maxRetries": 3,
+    "timeoutMs": 120000
+  },
+  "autonomy": "supervised",
+  "permissions": {
+    "allow": ["npm test", "npm run *", "git *"],
+    "deny": ["rm -rf *", "curl * | sh", "sudo *"]
+  },
+  "context": { "maxTokens": 120000, "redactSecrets": true },
+  "validation": { "preset": "node-ts" },
+  "teams": {
+    "eng": {
+      "roles": {
+        "backend": { "instructions": "Own server-side code and APIs." },
+        "frontend": { "instructions": "Own UI code. Never touch migrations." },
+        "qa": { "instructions": "Write and run tests. You may not push." }
+      }
+    }
+  }
+}
