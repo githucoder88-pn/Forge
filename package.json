@@ -9,7 +9,7 @@
     "apps/forge-electron"
   ],
   "scripts": {
-    "build": "npm run build --workspaces --if-present",
+    "build": "npm run build -w @forge/protocol && npm run build -w @forge/core && npm run build -w @forge/server && npm run build -w @forge/protocol-client && npm run build -w @forge/cli",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
     "demo": "node packages/forge-cli/bin/forge.js demo",

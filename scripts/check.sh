@@ -4,7 +4,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 echo "== build =="
-npm run build --workspaces --if-present
+npm run build
 
 echo "== typecheck =="
 npm run typecheck --workspaces --if-present
