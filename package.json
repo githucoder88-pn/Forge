@@ -1,0 +1,32 @@
+{
+  "name": "forge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Forge — open-source AI engineering platform. Phase 1: real coding-agent runtime.",
+  "type": "module",
+  "packageManager": "npm@10",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "typecheck": "npm run typecheck -ws",
+    "test": "node --test \"packages/*/tests/**/*.test.ts\" \"tests/**/*.test.ts\"",
+    "test:unit": "node --test \"packages/protocol/tests/**/*.test.ts\" \"packages/core/tests/unit/**/*.test.ts\"",
+    "test:integration": "node --test \"packages/core/tests/integration/**/*.test.ts\"",
+    "test:e2e": "node --test \"tests/e2e/**/*.test.ts\"",
+    "serve": "node packages/core/src/serve.ts",
+    "cli": "node packages/cli/src/main.ts"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@types/node": "^26.5.0",
+    "@types/ws": "^8.18.1",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "ws": "^8.21.3"
+  }
+}

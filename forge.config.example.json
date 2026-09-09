@@ -1,0 +1,19 @@
+{
+  "port": 8710,
+  "host": "127.0.0.1",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "openaiBaseUrl": "https://api.openai.com/v1",
+  "logLevel": "info",
+  "limits": {
+    "maxConcurrentTools": 4,
+    "maxShellProcesses": 4,
+    "maxOutputBytes": 512000,
+    "maxModelRequestBytes": 1000000,
+    "maxAgentRuntimeMs": 1800000,
+    "commandTimeoutMs": 120000,
+    "maxIterations": 40,
+    "maxFileBytes": 1000000,
+    "maxSearchResults": 100
+  }
+}

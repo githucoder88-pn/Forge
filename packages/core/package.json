@@ -1,0 +1,16 @@
+{
+  "name": "@forge/core",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "serve": "node src/serve.ts"
+  },
+  "dependencies": {
+    "@forge/protocol": "0.1.0",
+    "ws": "^8.18.0"
+  }
+}

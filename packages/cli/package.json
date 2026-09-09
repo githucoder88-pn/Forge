@@ -1,0 +1,16 @@
+{
+  "name": "@forge/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "forge": "./src/main.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@forge/client": "0.1.0",
+    "@forge/core": "0.1.0",
+    "@forge/protocol": "0.1.0"
+  }
+}

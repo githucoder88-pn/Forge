@@ -1,0 +1,27 @@
+{
+  "name": "@forge/electron",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "vite --port 1421",
+    "build": "vite build",
+    "typecheck": "tsc -p tsconfig.json",
+    "start": "electron .",
+    "dev:electron": "concurrently \"npm run dev\" \"wait-on http://localhost:1421 && cross-env FORGE_ELECTRON_URL=http://localhost:1421 electron .\""
+  },
+  "dependencies": {
+    "@forge/client": "0.1.0",
+    "@forge/protocol": "0.1.0",
+    "@forge/web-ui": "0.1.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "concurrently": "^9.0.0",
+    "electron": "^33.0.0",
+    "typescript": "^5.6.0",
+    "vite": "^6.0.0",
+    "wait-on": "^8.0.0"
+  }
+}
