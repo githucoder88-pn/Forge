@@ -1,0 +1,11 @@
+{
+  "name": "forge-electron",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Forge Electron shell — thin desktop window over the Core server. All logic lives in Core; this package only hosts the web client.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "license": "MIT"
+}

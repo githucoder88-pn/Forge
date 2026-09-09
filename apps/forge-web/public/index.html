@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forge</title>
+<link rel="stylesheet" href="/app/styles.css">
+</head>
+<body>
+<div id="demo-banner" class="demo-banner hidden">DEMO / SIMULATED — scripted models, real tools. <span id="demo-sub"></span></div>
+<div id="approval-banner" class="approval-banner hidden"></div>
+<header class="topbar">
+  <div class="brand">Forge</div>
+  <div class="project" id="project-label">—</div>
+  <div class="branch" id="branch-label"></div>
+  <div class="spacer"></div>
+  <select id="session-picker" class="session-picker" title="Session"></select>
+  <button id="btn-new-session" class="btn small" title="New session">+ Session</button>
+  <div class="model-chip" id="model-chip" title="Provider status">model: —</div>
+  <button id="btn-palette" class="btn small" title="Command palette (Ctrl+K)">⌘K</button>
+</header>
+<div class="layout">
+  <nav class="sidebar" id="sidebar">
+    <button data-view="project" class="nav-item active">Project</button>
+    <button data-view="agents" class="nav-item">Agents</button>
+    <button data-view="tasks" class="nav-item">Tasks</button>
+    <button data-view="teams" class="nav-item">Teams</button>
+    <button data-view="messages" class="nav-item">Messages</button>
+    <button data-view="git" class="nav-item">Git</button>
+    <button data-view="terminal" class="nav-item">Terminal</button>
+    <button data-view="models" class="nav-item">Models</button>
+    <button data-view="tools" class="nav-item">Tools</button>
+    <button data-view="memory" class="nav-item">Memory</button>
+    <button data-view="events" class="nav-item">Events</button>
+    <button data-view="settings" class="nav-item">Settings</button>
+    <div class="side-foot">
+      <div class="conn" id="conn-status">connecting…</div>
+      <div class="ctx" id="ctx-label"></div>
+    </div>
+  </nav>
+  <main class="main" id="main"></main>
+  <aside class="activity" id="activity">
+    <div class="panel">
+      <div class="panel-title">Agents <span class="count" id="agents-count"></span></div>
+      <div id="activity-agents" class="mini-list"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Tasks <span class="count" id="tasks-count"></span></div>
+      <div id="activity-tasks" class="mini-list"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Approvals <span class="count" id="approvals-count"></span></div>
+      <div id="activity-approvals" class="mini-list"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Recent events</div>
+      <div id="activity-events" class="mini-list mono"></div>
+    </div>
+  </aside>
+</div>
+<footer class="bottombar">
+  <div class="tabs">
+    <button class="tab active" data-tab="events">Events</button>
+    <button class="tab" data-tab="output">Output</button>
+  </div>
+  <div class="bottom-body mono" id="bottom-events"></div>
+  <div class="bottom-body mono hidden" id="bottom-output"></div>
+</footer>
+<div id="palette" class="palette hidden">
+  <input id="palette-input" class="palette-input" placeholder="Type a command… (Esc to close)" autocomplete="off">
+  <div id="palette-list" class="palette-list"></div>
+</div>
+<div id="toast" class="toast hidden"></div>
+<script src="/app/api.js"></script>
+<script src="/app/views.js"></script>
+<script src="/app/app.js"></script>
+</body>
+</html>

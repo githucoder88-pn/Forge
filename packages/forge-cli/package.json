@@ -1,0 +1,23 @@
+{
+  "name": "@forge/cli",
+  "version": "0.1.0",
+  "description": "Forge CLI — serve, run, inspect and control the Core runtime.",
+  "type": "module",
+  "main": "dist/cli.js",
+  "types": "dist/cli.d.ts",
+  "bin": {
+    "forge": "bin/forge.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test dist/test/*.test.js"
+  },
+  "dependencies": {
+    "@forge/core": "0.1.0",
+    "@forge/protocol": "0.1.0",
+    "@forge/protocol-client": "0.1.0",
+    "@forge/server": "0.1.0"
+  },
+  "license": "MIT"
+}

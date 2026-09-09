@@ -1,0 +1,7 @@
+{
+  "name": "shout",
+  "version": "0.1.0",
+  "api": "forge-plugin/1",
+  "entry": "./index.mjs",
+  "description": "Example plugin: registers a shout tool."
+}

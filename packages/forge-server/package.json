@@ -1,0 +1,22 @@
+{
+  "name": "@forge/server",
+  "version": "0.1.0",
+  "description": "Forge server — HTTP JSON-RPC API, WebSocket/SSE event streams, static clients.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test dist/test/*.test.js"
+  },
+  "dependencies": {
+    "@forge/core": "0.1.0",
+    "@forge/protocol": "0.1.0",
+    "ws": "^8.18.0"
+  },
+  "license": "MIT"
+}
